@@ -1,0 +1,234 @@
+/* Global Styles */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--elements);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    gap: 70%;
+    padding: 1rem 2rem;
+    margin: auto;
+    padding: 1rem;
+}
+
+/* Input and select elements */
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--input);
+    background-color: var(--elements);
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* Country Container */
+.country-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Country Card */
+.country-card {
+    background-color: var(--elements);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+}
+
+.country-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.country-info {
+    padding: 1rem;
+}
+
+.country-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Country Detail */
+.country-detail {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.country-detail img {
+    width: 90%;
+    max-width: 560px;
+    height: auto;
+}
+
+.country-detail-content {
+    /* flex: 1; */
+    padding: 20px;
+    /* text-align: center; */
+}
+
+.country-detail-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.country-detail-content p {
+    margin: 5px 0;
+}
+
+.country-detail-content div {
+    margin-top: 20px;
+}
+
+.back-btn {
+    background-color: var(--elements);
+    border: 1px solid var(--input);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.country-detail-content .border-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.country-detail-content .border-countries button {
+    padding: 5px 10px;
+    border: 1px solid var(--input);
+    border-radius: 5px;
+    background-color: var(--elements);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Light Theme */
+:root {
+    --background: hsl(0, 0%, 98%);
+    --elements: hsl(0, 0%, 100%);
+    --text: hsl(200, 15%, 8%);
+    --input: hsl(0, 0%, 52%);
+}
+
+/* Dark Theme */
+body.dark-mode {
+    --background: hsl(207, 26%, 17%);
+    --elements: hsl(209, 23%, 22%);
+    --text: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 52%);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .controls {
+        padding: 1rem;
+    }
+
+    .country-container {
+        padding: 1rem;
+    }
+    .country-detail {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .country-detail-content {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .country-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country-detail-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .country-card {
+        box-shadow: none;
+        padding: 1rem;
+    }
+
+    .country-card img {
+        height: auto;
+    }
+
+    .country-info h3 {
+        font-size: 16px;
+    }
+
+    .country-detail-content h2 {
+        font-size: 24px;
+    }
+
+    .country-detail-content p {
+        font-size: 14px;
+    }
+
+    .back-btn {
+        padding: 8px 16px;
+    }
+}
